@@ -1,35 +1,16 @@
 ## Deep Gender Detector for Audio
+classifying audio based on the speaker's gender using Resnet50
 
-a model that determines the gender of an audio file's speaker
+## Preprocess
+By runnig PreProcess.m, some changes will be applied to the audio files (such as resizing) and finally they will be converted to **Mel Spectogram**s and saved as images.
 
-### Markdown
+## Train
+We have done the train procedure using MATLAB's [Deep Network Designer APP](https://www.mathworks.com/help/deeplearning/gs/get-started-with-deep-network-designer.html)'s graphical interface.
+Due to our dataset's comparativly small size, we decided to use Transfer Learning: we loaded a pre-trained Resnet50 network and trained it again with our dataset.
+Finally we saved our trained model as **trainedNetwork_1.mat** file.
+Some data about the model and trainig process is provided in the trainInfoStruct_1.mat file.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+![train stats](docs/train_stats.PNG)
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/MJSahebnasi/IE_hw1/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+## Test
+You can simply load the **trainedNetwork_1.mat** file and test it. A sample script is provided in **test.m**.
