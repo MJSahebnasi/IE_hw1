@@ -1,5 +1,7 @@
 # IE_hw1
-git homework
+git homework 
+
+using an old repo:
 
 # Deep-Gender-Detector-for-Audio
 classifying audio based on the speaker's gender using Resnet50
